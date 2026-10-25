@@ -90,6 +90,30 @@
   p.lead{font-size:1.12rem;color:var(--ink);}
   .divider{height:1px;background:linear-gradient(90deg,transparent,var(--stone),transparent);}
 
+  .hero-ladies{
+    display:flex;justify-content:center;gap:1.25rem;flex-wrap:wrap;
+    margin:2rem auto 1.25rem;
+  }
+  .hero-lady{
+    display:flex;flex-direction:column;align-items:center;gap:.45rem;
+    color:var(--ink);text-decoration:none;font-size:.88rem;font-style:italic;
+    transition:transform .25s,color .25s;
+  }
+  .hero-lady:hover{transform:translateY(-4px);color:var(--deep);}
+  .hero-lady img{
+    width:88px;height:88px;border-radius:50%;object-fit:cover;object-position:top center;
+    border:3px solid rgba(255,253,248,.95);outline:1px solid var(--gold);
+    box-shadow:0 8px 18px rgba(42,37,31,.18);
+  }
+  .ladies-button{
+    display:inline-block;margin-top:.25rem;padding:.72rem 1.25rem;
+    border:1px solid var(--gold);color:var(--deep);text-decoration:none;
+    font-family:"Helvetica Neue",Arial,sans-serif;font-size:.66rem;
+    letter-spacing:.18em;text-transform:uppercase;transition:.25s;
+  }
+  .ladies-button:hover{background:var(--deep);color:var(--paper);}
+
+
   .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(235px,1fr));gap:1.3rem;margin-top:2rem;}
   .card{
     background:var(--paper);border:1px solid var(--stone);
@@ -101,7 +125,7 @@
   }
   .card p{font-size:.93rem;margin:0;}
 
-  /* RESIDENT PROFILES */
+  /* AETHERIA LADY PROFILES */
   .profile-grid{
     display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
     gap:1.3rem;margin-top:2rem;
@@ -115,8 +139,10 @@
     box-shadow:0 14px 32px -20px rgba(42,37,31,.45);
   }
   .profile-card img{
-    display:block;width:100%;height:330px;object-fit:cover;
-    object-position:top center;background:#eee4d4;
+    display:block;width:148px;height:148px;border-radius:50%;
+    object-fit:cover;object-position:top center;background:#eee4d4;
+    border:3px solid var(--paper);outline:1px solid var(--gold);
+    margin:1.7rem auto 0;
   }
   .profile-card div{padding:1.2rem 1.25rem 1.35rem;}
   .profile-card h3{margin:0 0 .35rem;}
@@ -198,6 +224,12 @@
     <h1>The Isles of <em>Aetheria</em></h1>
     <p class="sub">An island that does not exist on any map. No coordinates. No satellites. The only way to reach it is by invitation.</p>
     <div class="hairline"></div>
+    <div class="hero-ladies" aria-label="Featured ladies">
+      <a class="hero-lady" href="#yumi"><img src="asset/girls/yumi.webp" alt="Yumi"><span>Yumi</span></a>
+      <a class="hero-lady" href="#yuna"><img src="asset/girls/yuna.webp" alt="Yuna"><span>Yuna</span></a>
+      <a class="hero-lady" href="#keiyo"><img src="asset/girls/keiyo.webp" alt="Keiyo"><span>Keiyo</span></a>
+    </div>
+    <a class="ladies-button" href="#ladies">View all ladies</a>
   </div>
   <div class="cue">Scroll</div>
 </header>
@@ -206,7 +238,7 @@
   <ul>
     <li><a href="#welcome">Welcome</a></li>
     <li><a href="#uniform">The Uniform</a></li>
-    <li><a href="#residents">The Residents</a></li>
+    <li><a href="#ladies">The Ladies</a></li>
     <li><a href="#island">The Island</a></li>
     <li><a href="#rules">The Rules</a></li>
     <li><a href="#guides">The Guides</a></li>
@@ -238,25 +270,25 @@
 
 <div class="divider"></div>
 
-<section id="residents">
-  <div class="label">The Residents</div>
-  <h2>Faces of Aetheria</h2>
-  <p class="lead">A glimpse of the island's fictional adult residents in their standard island attire.</p>
+<section id="ladies">
+  <div class="label">The Ladies</div>
+  <h2>Meet the Ladies of Aetheria</h2>
+  <p class="lead">The front page introduces a few familiar faces. Browse the roster to get to know each of Aetheria's ladies.</p>
 
   <div class="profile-grid">
-    <article class="profile-card">
+    <article class="profile-card" id="yumi">
       <img src="asset/girls/yumi.webp" alt="Portrait of Yumi">
-      <div><h3>Yumi</h3><p>Aetheria resident</p></div>
+      <div><h3>Yumi</h3><p>Bright, playful, and effortlessly welcoming. Yumi has a way of making every new arrival feel seen.</p></div>
     </article>
 
-    <article class="profile-card">
+    <article class="profile-card" id="yuna">
       <img src="asset/girls/yuna.webp" alt="Portrait of Yuna">
-      <div><h3>Yuna</h3><p>Aetheria resident</p></div>
+      <div><h3>Yuna</h3><p>Quietly observant and composed, with a warmth that appears in the moments you least expect it.</p></div>
     </article>
 
-    <article class="profile-card">
+    <article class="profile-card" id="keiyo">
       <img src="asset/girls/keiyo.webp" alt="Portrait of Keiyo">
-      <div><h3>Keiyo</h3><p>Your island guide</p></div>
+      <div><h3>Keiyo</h3><p>One of Aetheria's ladies and the first to welcome you ashore—poised, attentive, and unforgettable.</p></div>
     </article>
   </div>
 </section>
