@@ -24,32 +24,25 @@
     line-height:1.75;
   }
 
-  /* HERO */
   .hero{
-    min-height:100vh;
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    justify-content:center;
-    text-align:center;
-    padding:2rem;
-    position:relative;
+    min-height:100vh;display:flex;flex-direction:column;
+    align-items:center;justify-content:center;text-align:center;
+    padding:2rem;position:relative;
     background:
       radial-gradient(ellipse at 50% 115%, rgba(47,93,93,.5), transparent 62%),
       linear-gradient(180deg,#faf5ec,#ecdfca 50%,#dccbb0);
     overflow:hidden;
   }
   .hero::before{
-    content:"";
-    position:absolute;inset:0;
+    content:"";position:absolute;inset:0;
     background:repeating-linear-gradient(90deg,rgba(255,255,255,.14) 0 2px,transparent 2px 7px);
     pointer-events:none;
   }
   .hero-inner{position:relative;z-index:2;max-width:840px;}
   .eyebrow{
-    font-family:"Helvetica Neue",Arial,sans-serif;
-    font-size:.7rem;letter-spacing:.55em;text-transform:uppercase;
-    color:var(--gold);margin-bottom:1.7rem;
+    font-family:"Helvetica Neue",Arial,sans-serif;font-size:.7rem;
+    letter-spacing:.55em;text-transform:uppercase;color:var(--gold);
+    margin-bottom:1.7rem;
   }
   .hero h1{
     font-size:clamp(2.5rem,9vw,5.4rem);
@@ -57,8 +50,8 @@
   }
   .hero h1 em{display:block;font-style:italic;color:var(--deep);}
   .hero .sub{
-    margin:1.9rem auto 0;max-width:580px;
-    font-style:italic;font-size:clamp(1rem,2.3vw,1.22rem);color:var(--soft);
+    margin:1.9rem auto 0;max-width:580px;font-style:italic;
+    font-size:clamp(1rem,2.3vw,1.22rem);color:var(--soft);
   }
   .hairline{width:72px;height:1px;background:var(--gold);margin:2.5rem auto 0;}
   .cue{
@@ -69,12 +62,9 @@
   }
   @keyframes bob{0%,100%{transform:translate(-50%,0);}50%{transform:translate(-50%,9px);}}
 
-  /* NAV */
   nav{
-    position:sticky;top:0;z-index:60;
-    background:rgba(245,239,228,.93);
-    backdrop-filter:blur(10px);
-    border-bottom:1px solid var(--stone);
+    position:sticky;top:0;z-index:60;background:rgba(245,239,228,.93);
+    backdrop-filter:blur(10px);border-bottom:1px solid var(--stone);
   }
   nav ul{
     list-style:none;display:flex;flex-wrap:wrap;justify-content:center;
@@ -88,12 +78,11 @@
   }
   nav a:hover{color:var(--deep);border-bottom-color:var(--gold);}
 
-  /* LAYOUT */
   section{max-width:980px;margin:0 auto;padding:5.5rem 1.6rem;}
   .label{
-    font-family:"Helvetica Neue",Arial,sans-serif;
-    font-size:.66rem;letter-spacing:.4em;text-transform:uppercase;
-    color:var(--gold);margin-bottom:1rem;
+    font-family:"Helvetica Neue",Arial,sans-serif;font-size:.66rem;
+    letter-spacing:.4em;text-transform:uppercase;color:var(--gold);
+    margin-bottom:1rem;
   }
   h2{font-size:clamp(1.7rem,4.4vw,2.5rem);font-weight:400;margin-bottom:1.5rem;}
   h3{font-size:1.12rem;font-weight:400;font-style:italic;color:var(--deep);margin-bottom:.5rem;}
@@ -101,15 +90,38 @@
   p.lead{font-size:1.12rem;color:var(--ink);}
   .divider{height:1px;background:linear-gradient(90deg,transparent,var(--stone),transparent);}
 
-  /* CARDS */
   .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(235px,1fr));gap:1.3rem;margin-top:2rem;}
   .card{
-    background:var(--paper);border:1px solid var(--stone);padding:1.7rem 1.5rem;transition:.3s;
+    background:var(--paper);border:1px solid var(--stone);
+    padding:1.7rem 1.5rem;transition:.3s;
   }
-  .card:hover{border-color:var(--gold);transform:translateY(-3px);box-shadow:0 14px 32px -20px rgba(42,37,31,.45);}
+  .card:hover{
+    border-color:var(--gold);transform:translateY(-3px);
+    box-shadow:0 14px 32px -20px rgba(42,37,31,.45);
+  }
   .card p{font-size:.93rem;margin:0;}
 
-  /* RULES */
+  /* RESIDENT PROFILES */
+  .profile-grid{
+    display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:1.3rem;margin-top:2rem;
+  }
+  .profile-card{
+    background:var(--paper);border:1px solid var(--stone);
+    overflow:hidden;transition:.3s;
+  }
+  .profile-card:hover{
+    border-color:var(--gold);transform:translateY(-3px);
+    box-shadow:0 14px 32px -20px rgba(42,37,31,.45);
+  }
+  .profile-card img{
+    display:block;width:100%;height:330px;object-fit:cover;
+    object-position:top center;background:#eee4d4;
+  }
+  .profile-card div{padding:1.2rem 1.25rem 1.35rem;}
+  .profile-card h3{margin:0 0 .35rem;}
+  .profile-card p{margin:0;font-size:.92rem;}
+
   .rules{list-style:none;counter-reset:r;margin-top:2rem;}
   .rules li{
     counter-increment:r;position:relative;
@@ -123,7 +135,6 @@
   .rules strong{color:var(--ink);}
   .rules p{margin:0;font-size:.97rem;}
 
-  /* BOARD */
   .board{
     background:var(--deep);color:var(--sand);padding:2.2rem;margin-top:2rem;
     font-family:"Helvetica Neue",Arial,sans-serif;
@@ -137,21 +148,22 @@
   .board li:last-child{border-bottom:none;}
   .board li::before{content:"— ";color:var(--gold);}
 
-  /* GUIDE CARD */
   .guide{
     display:grid;grid-template-columns:auto 1fr;gap:1.6rem;align-items:center;
     background:var(--paper);border:1px solid var(--stone);padding:2rem;margin-top:2rem;
   }
   .guide .seal{
-    width:74px;height:74px;border-radius:50%;
-    border:1px solid var(--gold);display:flex;align-items:center;justify-content:center;
+    width:74px;height:74px;border-radius:50%;border:1px solid var(--gold);
+    display:flex;align-items:center;justify-content:center;
     font-family:"Helvetica Neue",Arial,sans-serif;font-size:1.6rem;color:var(--gold);
   }
   .guide dl{display:grid;grid-template-columns:auto 1fr;gap:.3rem 1rem;font-size:.92rem;}
-  .guide dt{color:var(--gold);font-family:"Helvetica Neue",Arial,sans-serif;font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;padding-top:.25rem;}
+  .guide dt{
+    color:var(--gold);font-family:"Helvetica Neue",Arial,sans-serif;
+    font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;padding-top:.25rem;
+  }
   .guide dd{color:var(--soft);}
 
-  /* QUICK REF */
   .quick{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem;margin-top:2rem;}
   .quick div{
     border-left:2px solid var(--gold);padding:.4rem 0 .4rem 1rem;
@@ -159,7 +171,6 @@
   }
   .quick b{color:var(--ink);display:block;font-weight:600;}
 
-  /* FOOTER */
   footer{
     text-align:center;padding:4rem 1.6rem;
     background:var(--deep);color:var(--sand);
@@ -181,7 +192,6 @@
 </head>
 <body>
 
-<!-- HERO -->
 <header class="hero">
   <div class="hero-inner">
     <div class="eyebrow">By Invitation Only</div>
@@ -192,11 +202,11 @@
   <div class="cue">Scroll</div>
 </header>
 
-<!-- NAV -->
 <nav>
   <ul>
     <li><a href="#welcome">Welcome</a></li>
     <li><a href="#uniform">The Uniform</a></li>
+    <li><a href="#residents">The Residents</a></li>
     <li><a href="#island">The Island</a></li>
     <li><a href="#rules">The Rules</a></li>
     <li><a href="#guides">The Guides</a></li>
@@ -205,7 +215,6 @@
   </ul>
 </nav>
 
-<!-- WELCOME -->
 <section id="welcome">
   <div class="label">Welcome</div>
   <h2>You have been personally invited.</h2>
@@ -216,7 +225,6 @@
 
 <div class="divider"></div>
 
-<!-- UNIFORM -->
 <section id="uniform">
   <div class="label">Dress</div>
   <h2>The Uniform</h2>
@@ -230,11 +238,36 @@
 
 <div class="divider"></div>
 
-<!-- ISLAND -->
+<section id="residents">
+  <div class="label">The Residents</div>
+  <h2>Faces of Aetheria</h2>
+  <p class="lead">A glimpse of the island's fictional adult residents in their standard island attire.</p>
+
+  <div class="profile-grid">
+    <article class="profile-card">
+      <img src="asset/girls/yumi.webp" alt="Portrait of Yumi">
+      <div><h3>Yumi</h3><p>Aetheria resident</p></div>
+    </article>
+
+    <article class="profile-card">
+      <img src="asset/girls/yuna.webp" alt="Portrait of Yuna">
+      <div><h3>Yuna</h3><p>Aetheria resident</p></div>
+    </article>
+
+    <article class="profile-card">
+      <img src="asset/girls/keiyo.webp" alt="Portrait of Keiyo">
+      <div><h3>Keiyo</h3><p>Your island guide</p></div>
+    </article>
+  </div>
+</section>
+
+<div class="divider"></div>
+
 <section id="island">
   <div class="label">Geography</div>
   <h2>The Island</h2>
   <p>Small enough to walk in an afternoon. Most guests don't.</p>
+
   <div class="grid">
     <div class="card"><h3>The Villa</h3><p>The main structure. Low, sprawling, pale stone and dark wood. No doors on the seaward side — just open archways. Low couches, wide beds, sunken baths, soft rugs. Every room opens onto a terrace facing the water.</p></div>
     <div class="card"><h3>The Gardens</h3><p>Terraced into the hillside behind the villa. Winding paths, shaded groves, shallow pools, and scattered pavilions with nothing in them but cushions.</p></div>
@@ -246,7 +279,6 @@
 
 <div class="divider"></div>
 
-<!-- RULES -->
 <section id="rules">
   <div class="label">Conduct</div>
   <h2>The Rules</h2>
@@ -261,11 +293,11 @@
 
 <div class="divider"></div>
 
-<!-- GUIDES -->
 <section id="guides">
   <div class="label">Orientation</div>
   <h2>The Guides</h2>
   <p>A <strong>guide</strong> is a lady who has volunteered to spend one day — your first day — with a single guest.</p>
+
   <div class="grid">
     <div class="card"><h3>Exclusive</h3><p>Only that guest. For that day, she belongs to no one else. No one else touches her until the day is done.</p></div>
     <div class="card"><h3>Available</h3><p>She walks with you, explains the island, answers your questions — and is available to you however you want her, as often as you want her, wherever you want her.</p></div>
@@ -276,11 +308,11 @@
 
 <div class="divider"></div>
 
-<!-- BOARD -->
 <section id="board">
   <div class="label">Selection</div>
   <h2>The Board</h2>
   <p>The Board is how you see everyone.</p>
+
   <div class="board">
     <h3>How it works</h3>
     <ul>
@@ -299,10 +331,10 @@
 
 <div class="divider"></div>
 
-<!-- YOUR GUIDE -->
 <section id="yourguide">
   <div class="label">Assigned</div>
   <h2>Your Guide</h2>
+
   <div class="guide">
     <div class="seal">K</div>
     <dl>
@@ -312,16 +344,17 @@
       <dt>Status</dt><dd>Active — assigned to you until sunset</dd>
     </dl>
   </div>
+
   <p style="margin-top:1.5rem;">She met you at the dock. She bowed. Her robe fell open. She didn't fix it.</p>
   <p><em>She is yours until the sun goes down.</em></p>
 </section>
 
 <div class="divider"></div>
 
-<!-- QUICK REF -->
 <section>
   <div class="label">Quick Reference</div>
   <h2>At a Glance</h2>
+
   <div class="quick">
     <div><b>Want someone?</b>Check the Board, tap, request.</div>
     <div><b>Want to be alone?</b>Say so.</div>
