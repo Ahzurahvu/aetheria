@@ -125,6 +125,16 @@
   }
   .card p{font-size:.93rem;margin:0;}
 
+  .uniform-showcase{
+    display:grid;grid-template-columns:minmax(230px,.78fr) 1fr;gap:2.5rem;
+    align-items:center;margin-top:2rem;background:var(--paper);border:1px solid var(--stone);
+    padding:1.6rem;
+  }
+  .uniform-showcase img{display:block;width:100%;max-width:390px;margin:0 auto;}
+  .uniform-copy h3{font-size:1.35rem;margin-bottom:.8rem;}
+  .uniform-copy p{margin:0;}
+
+
   /* AETHERIA LADY PROFILES */
   .profile-grid{
     display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
@@ -213,6 +223,8 @@
     .guide{grid-template-columns:1fr;text-align:center;}
     .guide .seal{margin:0 auto;}
     .guide dl{grid-template-columns:1fr;}
+    .uniform-showcase{grid-template-columns:1fr;text-align:center;}
+    .uniform-showcase img{max-width:290px;}
   }
 </style>
 </head>
@@ -261,10 +273,13 @@
   <div class="label">Dress</div>
   <h2>The Uniform</h2>
   <p>All ladies wear the same standard garment.</p>
-  <div class="grid">
-    <div class="card"><h3>Fabric</h3><p>Thin, semi-sheer white. Light enough to cling when damp and fall open with the slightest movement.</p></div>
-    <div class="card"><h3>Cut</h3><p>Barely closes in the front. Ends high on the thigh. Leaves very little to the imagination.</p></div>
-    <div class="card"><h3>Beneath</h3><p>Nothing worn underneath, unless a guest specifically requests otherwise.</p></div>
+  <div class="uniform-showcase">
+    <img src="asset/uniform-robe.png" alt="The Aetheria island robe">
+    <div class="uniform-copy">
+      <div class="label">Island Issue</div>
+      <h3>The Aetheria Robe</h3>
+      <p>Light, flowing ivory fabric with loose sleeves and a soft sash—made for the island heat and designed to move with the sea breeze.</p>
+    </div>
   </div>
 </section>
 
