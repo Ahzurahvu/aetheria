@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>The Island of Aetheria</title>
+<style>
+:root{--sand:#f5efe4;--stone:#d8cbb6;--ink:#2a251f;--soft:#5f564b;--sea:#2f5d5d;--deep:#1c3a3a;--gold:#b28c52;--paper:#fffdf8}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--sand);color:var(--ink);font-family:Georgia,"Times New Roman",serif;line-height:1.7}
+nav{position:sticky;top:0;z-index:5;background:rgba(245,239,228,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--stone)}
+nav ul{list-style:none;display:flex;justify-content:center;gap:1.8rem;padding:1rem;margin:0;font-family:"Helvetica Neue",Arial,sans-serif;font-size:.7rem;letter-spacing:.22em;text-transform:uppercase}
+nav a{color:var(--soft);text-decoration:none}nav a:hover{color:var(--deep)}
+header{text-align:center;padding:4.5rem 1.5rem 2.5rem;background:linear-gradient(180deg,#faf5ec,#ecdfca)}.label{font-family:"Helvetica Neue",Arial,sans-serif;font-size:.66rem;letter-spacing:.4em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem}h1{font-size:clamp(2.5rem,7vw,4.5rem);font-weight:400;margin:0}header p{max-width:640px;margin:1rem auto 0;color:var(--soft);font-style:italic}
+main{max-width:1080px;margin:0 auto;padding:2rem 1.6rem 5rem}.map-wrap{background:var(--deep);padding:1rem;border:1px solid #12302f;box-shadow:0 18px 40px -25px rgba(42,37,31,.6)}svg{width:100%;display:block}.sea-label{font:italic 25px Georgia,serif;fill:#b8d0cc;opacity:.65}.place{fill:#fffdf8;stroke:#b28c52;stroke-width:2}.place-num{font:600 16px Arial,sans-serif;fill:#1c3a3a}.place-label{font:600 13px Arial,sans-serif;letter-spacing:1.5px;fill:#fffdf8;text-transform:uppercase}.map-link{cursor:pointer}.map-link:hover .place{fill:#f4dfab}
+.locations{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1.2rem;margin-top:2rem}.location{background:var(--paper);border:1px solid var(--stone);padding:1.4rem;scroll-margin-top:5rem}.location h2{font-size:1.25rem;font-weight:400;font-style:italic;color:var(--deep);margin:0 0 .4rem}.location p{margin:0;color:var(--soft);font-size:.94rem}.key{font-family:Arial,sans-serif;font-size:.7rem;color:var(--gold);letter-spacing:.2em;text-transform:uppercase}
+</style></head><body>
+<nav><ul><li><a href="index.html">Home</a></li><li><a href="island.html">The Island</a></li><li><a href="ladies.html">The Ladies</a></li></ul></nav>
+<header><div class="label">Orientation</div><h1>The Island of Aetheria</h1><p>A private shoreline, gardens, pools, and places to disappear for an afternoon.</p></header>
+<main><div class="map-wrap"><svg viewBox="0 0 1000 660" role="img" aria-label="Map of Aetheria with six locations">
+<rect width="1000" height="660" fill="#2f5d5d"/><path d="M125 150 C220 52 382 62 468 110 C575 55 773 100 850 230 C922 350 837 519 702 555 C573 624 437 579 341 603 C200 620 67 507 99 375 C67 281 73 211 125 150Z" fill="#e8d5af" stroke="#fff2d7" stroke-width="5"/>
+<path d="M163 206 C279 120 387 163 467 145 C572 110 734 148 795 251 C845 344 769 469 663 498 C563 543 447 514 347 546 C235 554 142 463 155 372 C122 299 124 247 163 206Z" fill="#78916d" opacity=".9"/>
+<path d="M221 282 C303 239 382 257 451 232 C539 204 656 214 721 279 C770 331 724 409 641 432 C554 467 454 442 371 471 C289 478 216 420 221 352Z" fill="#cfb27e" opacity=".92"/>
+<path d="M360 285 C430 247 548 240 624 290 C676 324 651 378 588 399 C513 421 416 407 357 370 C323 348 326 308 360 285Z" fill="#f4efe0" opacity=".85"/>
+<path d="M434 284 C477 259 538 262 575 294 C610 326 591 366 548 379 C500 394 443 378 421 344 C407 322 414 297 434 284Z" fill="#6c9da3"/>
+<path d="M190 442 C242 411 305 416 336 453 C358 483 331 520 284 528 C232 536 188 510 181 478 C176 462 180 450 190 442Z" fill="#8cc4c4"/>
+<text x="65" y="95" class="sea-label">The Aetherian Sea</text>
+<a class="map-link" href="#villas"><circle class="place" cx="370" cy="260" r="19"/><text class="place-num" x="365" y="266">1</text><text class="place-label" x="396" y="246">The Villas</text></a>
+<a class="map-link" href="#main"><circle class="place" cx="505" cy="330" r="19"/><text class="place-num" x="500" y="336">2</text><text class="place-label" x="530" y="316">Main Area</text></a>
+<a class="map-link" href="#lounge"><circle class="place" cx="637" cy="354" r="19"/><text class="place-num" x="632" y="360">3</text><text class="place-label" x="662" y="340">The Lounge</text></a>
+<a class="map-link" href="#onsen"><circle class="place" cx="280" cy="460" r="19"/><text class="place-num" x="275" y="466">4</text><text class="place-label" x="305" y="446">Onsen Area</text></a>
+<a class="map-link" href="#pool"><circle class="place" cx="504" cy="320" r="19" transform="translate(25,-58)"/><text class="place-num" x="524" y="268">5</text><text class="place-label" x="553" y="252">Pool Area</text></a>
+<a class="map-link" href="#canteen"><circle class="place" cx="684" cy="274" r="19"/><text class="place-num" x="679" y="280">6</text><text class="place-label" x="710" y="260">The Canteen</text></a>
+</svg></div>
+<div class="locations">
+<article class="location" id="villas"><div class="key">01</div><h2>The Villas</h2><p>Private suites tucked into the palm-lined rise, each opening toward the water.</p></article>
+<article class="location" id="main"><div class="key">02</div><h2>The Main Area</h2><p>The island’s central gathering space: open paths, shaded terraces, and the route to everywhere else.</p></article>
+<article class="location" id="lounge"><div class="key">03</div><h2>The Lounge</h2><p>A low-lit retreat for slow afternoons, drinks, and the sound of the sea beyond the doors.</p></article>
+<article class="location" id="onsen"><div class="key">04</div><h2>The Onsen Area</h2><p>Warm stone pools set into the quiet side of the island, surrounded by greenery and steam.</p></article>
+<article class="location" id="pool"><div class="key">05</div><h2>The Pool Area</h2><p>A freshwater pool at the island’s heart, framed by sun loungers and pale-stone decks.</p></article>
+<article class="location" id="canteen"><div class="key">06</div><h2>The Canteen</h2><p>An all-day open kitchen for relaxed meals, fruit, and late-night refreshments.</p></article>
+</div></main></body></html>
