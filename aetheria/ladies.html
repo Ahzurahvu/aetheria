@@ -19,7 +19,16 @@ main{max-width:980px;margin:0 auto;padding:2rem 1.6rem 5rem}
 .profile-card:hover{border-color:var(--gold);transform:translateY(-3px);box-shadow:0 14px 32px -20px rgba(42,37,31,.45)}
 .profile-card img{display:block;width:180px;height:180px;border-radius:50%;object-fit:cover;object-position:top center;background:#eee4d4;border:3px solid var(--paper);outline:1px solid var(--gold);margin:2rem auto 0}
 .profile-card div{padding:1.2rem 1.4rem 1.6rem;text-align:left}.profile-card h2{font-size:1.35rem;font-style:italic;font-weight:400;color:var(--deep);margin:0 0 .8rem}.profile-card p{margin:.9rem 0 0;color:var(--soft);font-size:.94rem}.bio{margin:0;display:grid;grid-template-columns:82px 1fr;gap:.35rem .8rem;font-family:"Helvetica Neue",Arial,sans-serif}.bio dt{font-size:.63rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);padding-top:.15rem}.bio dd{margin:0;color:var(--soft);font-size:.85rem}
-.bio{grid-template-columns:86px minmax(0,1fr)}.bio dd{overflow-wrap:anywhere}</style>
+.bio{grid-template-columns:86px minmax(0,1fr)}.bio dd{overflow-wrap:anywhere}
+/* Portrait hover preview */
+.profile-card > img{cursor:zoom-in;transition:transform .22s ease,box-shadow .22s ease}
+.profile-card > img:hover,.profile-card > img:focus-visible{transform:scale(1.045);box-shadow:0 8px 28px #2a251f55}
+#portrait-preview{position:fixed;inset:0;z-index:200;display:none;align-items:center;justify-content:center;background:rgba(14,20,19,.82);backdrop-filter:blur(8px);padding:5vh 5vw;pointer-events:none}
+#portrait-preview.is-open{display:flex}
+#portrait-preview img{display:block;max-width:min(92vw,720px);max-height:88vh;width:auto;height:auto;object-fit:contain;border:2px solid #d8cbb6;box-shadow:0 20px 65px #0009}
+#portrait-preview button{position:absolute;right:20px;top:14px;background:#fffdf8;color:#2a251f;border:1px solid #b28c52;padding:9px 13px;font-size:1.25rem;cursor:pointer;pointer-events:auto}
+@media(hover:none){#portrait-preview{pointer-events:auto}}
+</style>
 </head>
 <body>
 <nav><ul><li><a href="index.html">Home</a></li><li><a href="ladies.html">The Ladies</a></li></ul></nav>
@@ -55,4 +64,31 @@ main{max-width:980px;margin:0 auto;padding:2rem 1.6rem 5rem}
 <article class="profile-card" id="nanami"><img src="../asset/girls/nanami.webp" alt="Portrait of Nanami Kisaragi" loading="lazy" onerror="this.style.visibility='hidden'"><div><h2>Nanami Kisaragi</h2><dl class="bio"><dt>Name</dt><dd>Nanami Kisaragi</dd><dt>Age</dt><dd>23</dd><dt>Ethnicity</dt><dd>Japanese</dd><dt>Country</dt><dd>Japan</dd><dt>Height</dt><dd>160 cm</dd><dt>Bust</dt><dd>84 cm (fictional)</dd></dl><p>Soft-spoken, inquisitive and a little dreamy, with an unexpectedly cheeky sense of humor once she feels comfortable.</p></div></article>
 <article class="profile-card" id="ren"><img src="../asset/girls/ren.webp" alt="Portrait of Ren Kurosawa" loading="lazy" onerror="this.style.visibility='hidden'"><div><h2>Ren Kurosawa</h2><dl class="bio"><dt>Name</dt><dd>Ren Kurosawa</dd><dt>Age</dt><dd>25</dd><dt>Ethnicity</dt><dd>Japanese</dd><dt>Country</dt><dd>Japan</dd><dt>Height</dt><dd>167 cm</dd><dt>Bust</dt><dd>87 cm (fictional)</dd></dl><p>Bold, unconventional and fiercely independent. She loves music, midnight swims and playful verbal sparring.</p></div></article>
 <article class="profile-card" id="tsubasa"><img src="../asset/girls/tsubasa.webp" alt="Portrait of Tsubasa Hoshino" loading="lazy" onerror="this.style.visibility='hidden'"><div><h2>Tsubasa Hoshino</h2><dl class="bio"><dt>Name</dt><dd>Tsubasa Hoshino</dd><dt>Age</dt><dd>27</dd><dt>Ethnicity</dt><dd>Japanese</dd><dt>Country</dt><dd>Japan</dd><dt>Height</dt><dd>169 cm</dd><dt>Bust</dt><dd>90 cm (fictional)</dd></dl><p>Easygoing, elegant and quietly confident. She has a soothing presence, with a spontaneous adventurous streak.</p></div></article></div></main>
+
+<div id="portrait-preview" role="dialog" aria-label="Full portrait preview" aria-hidden="true"><button type="button" aria-label="Close portrait preview">×</button><img alt=""></div>
+<script>
+(()=>{
+  const viewer=document.getElementById('portrait-preview');
+  const full=viewer.querySelector('img');
+  const close=()=>{viewer.classList.remove('is-open');viewer.setAttribute('aria-hidden','true');full.removeAttribute('src')};
+  const show=(img,interactive=false)=>{
+    if(!img.getAttribute('src') || img.style.visibility==='hidden')return;
+    full.src=img.currentSrc||img.src;
+    full.alt=img.alt;
+    viewer.classList.add('is-open');viewer.setAttribute('aria-hidden','false');
+    viewer.style.pointerEvents=interactive?'auto':'none';
+  };
+  document.querySelectorAll('.profile-card > img').forEach(img=>{
+    img.setAttribute('tabindex','0');
+    img.setAttribute('aria-label','Preview full image: '+img.alt);
+    img.addEventListener('mouseenter',()=>{if(matchMedia('(hover:hover)').matches)show(img)});
+    img.addEventListener('mouseleave',()=>{if(matchMedia('(hover:hover)').matches)close()});
+    img.addEventListener('click',()=>show(img,true));
+    img.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();show(img,true)}});
+  });
+  viewer.querySelector('button').addEventListener('click',close);
+  viewer.addEventListener('click',e=>{if(e.target===viewer)close()});
+  document.addEventListener('keydown',e=>{if(e.key==='Escape')close()});
+})();
+</script>
 </body></html>
