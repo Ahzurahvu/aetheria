@@ -22,7 +22,8 @@ const characters=[
 {id:'rei',code:'RPC 001',name:'Rei Kurosaki',native:'黒崎 怜',age:24,country:'Japan',height:'165 cm',bust:'C-cup',genres:'Romance · Slice of Life · Drama · Mature · Mystery',folder:'ReiKurosaki'},
 {id:'seoyeun',code:'RPC 002',name:'Lee Seoyeun',native:'이서연',age:24,country:'South Korea',height:'167 cm',bust:'C-cup',genres:'Romance · Slice of Life · Drama · Luxury · Mature',folder:'lee-seoyeun'},
 {id:'yuxi',code:'RPC 003',name:'Lin Yuxi',native:'林语汐',age:23,country:'China',height:'163 cm',bust:'C-cup',genres:'Romance · Slice of Life · Drama · Mature · Historical',folder:'zhang-jiale'},
-{id:'harper',code:'RPC 004',name:'Harper Bennett',native:'',age:26,country:'United States',height:'168 cm',bust:'D-cup',genres:'Romance · Slice of Life · Drama · Mature · Adventure',folder:'harper-bennett'}
+{id:'harper',code:'RPC 004',name:'Harper Bennett',native:'',age:26,country:'United States',height:'168 cm',bust:'D-cup',genres:'Romance · Slice of Life · Drama · Mature · Adventure',folder:'harper-bennett'},
+{id:'sophie',code:'RPC 008',name:'Sophie Laurent',native:'',age:38,country:'France',height:'169 cm',bust:'D-cup',genres:'Romance · Slice of Life · Drama · Mature · Mystery',folder:'sophie-laurent',outfits:['normal','normal2','formal','party','swimwear','lingerie','sporty']}
 ];
 const outfits=['normal','normal2','formal','party','swimwear','lingerie','sporty','cultural'];
 const root=document.getElementById('directory');
@@ -31,7 +32,7 @@ function missingImage(image){image.onerror=null;image.src='data:image/svg+xml,'+
 function select(id,scroll=false){const c=characters.find(x=>x.id===id)||characters[0];document.querySelectorAll('.person').forEach(el=>{const active=el.dataset.id===c.id;el.classList.toggle('active',active);el.setAttribute('aria-pressed',String(active))});document.getElementById('portrait').src=imgSrc(c,'normal');document.getElementById('portrait').alt=c.name;document.getElementById('portrait').onerror=()=>missingImage(document.getElementById('portrait'));
 document.getElementById('number').textContent=c.code;document.getElementById('name').textContent=c.name;document.getElementById('native').textContent=c.native;
 const f=document.getElementById('fields');f.replaceChildren();for(const [label,value] of [['Name',c.name],['Age',c.age],['Country',c.country],['Height',c.height],['Bust',c.bust],['RP Genre',c.genres]]){const el=document.createElement('div');el.className='field';const small=document.createElement('small');small.textContent=label;const strong=document.createElement('strong');strong.textContent=value;el.append(small,strong);f.append(el)}
-const g=document.getElementById('gallery');g.replaceChildren();for(const o of outfits){const a=document.createElement('a');a.className='look';a.href=imgSrc(c,o);a.target='_blank';a.rel='noopener';const image=document.createElement('img');image.loading='lazy';image.src=imgSrc(c,o);image.alt=c.name+' — '+o;image.onerror=()=>missingImage(image);const label=document.createElement('span');label.textContent=o==='normal2'?'Normal 2':o;a.append(image,label);g.append(a)}
+const g=document.getElementById('gallery');g.replaceChildren();for(const o of (c.outfits||outfits)){const a=document.createElement('a');a.className='look';a.href=imgSrc(c,o);a.target='_blank';a.rel='noopener';const image=document.createElement('img');image.loading='lazy';image.src=imgSrc(c,o);image.alt=c.name+' — '+o;image.onerror=()=>missingImage(image);const label=document.createElement('span');label.textContent=o==='normal2'?'Normal 2':o;a.append(image,label);g.append(a)}
 if(location.hash!==('#'+c.id))history.replaceState(null,'','#'+c.id);
 if(scroll)document.getElementById('profile').scrollIntoView({behavior:'smooth',block:'start'});
 }
