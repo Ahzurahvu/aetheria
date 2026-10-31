@@ -24,10 +24,30 @@ figure{margin:0;min-width:0}figure img{width:100%;display:block;object-fit:cover
 .note{font:13px/1.7 Jost,Arial,sans-serif;opacity:.75;grid-column:1/-1;margin-top:8px}footer{padding:28px;text-align:center;font-size:10px;letter-spacing:.2em}
 @media(max-width:800px){header{padding:18px 20px}nav{gap:12px}nav a:not(.outline){display:none}.hero{min-height:630px;align-items:flex-end}.hero:before{background-position:65% center}.hero:after{background:linear-gradient(0deg,#19070b 0%,rgba(22,4,8,.88) 18%,rgba(22,4,8,.42) 48%,transparent 90%)}.hero-content{width:min(94%,530px);margin:0 24px;padding:0 0 70px}.gallery-grid{grid-template-columns:1fr}.photo-front,.photo-profile{height:clamp(260px,75vw,600px)}.gallery-secondary{gap:12px 22px}.tile .crop,.variation img{height:clamp(95px,25vw,220px)}}
 @media(max-width:400px){.gallery-primary{gap:9px}.gallery-section{padding:20px 12px 45px}.hero h1{font-size:52px}}
+
+/* Simplified two-outfit editorial collection */
+.collection{background:#efe3d4;color:#392022;padding:clamp(42px,6vw,90px) clamp(22px,5vw,82px) clamp(60px,7vw,110px)}
+.collection-heading{text-align:center;margin:0 auto clamp(30px,4vw,56px)}
+.collection-heading .line{margin:0 auto 19px;background:#8e6c57}
+.collection-heading .eyebrow{font-size:12px;color:#694443}
+.collection-heading h2{font-size:clamp(40px,5vw,68px);margin:14px 0 0}
+.outfit-grid{max-width:1240px;margin:auto;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(18px,3vw,48px)}
+.outfit-image{aspect-ratio:3/4;overflow:hidden;background:#dcc9b7}
+.outfit-image img{display:block;width:100%;height:100%;object-fit:cover;object-position:35% center}
+.outfit-label{display:flex;align-items:baseline;gap:18px;padding:17px 0;border-bottom:1px solid #9f81747a}
+.outfit-label span{font-size:11px;letter-spacing:.22em;color:#8c6656}
+.outfit-label h3{font-size:clamp(30px,3.3vw,46px)}
+.outfit-placeholder{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;background:radial-gradient(ellipse at 60% 30%,#6d2037,#200b14 75%);color:#e6cbb2}
+.outfit-placeholder .placeholder-mark{font:clamp(18px,2.4vw,32px) "Cormorant Garamond",Georgia,serif;letter-spacing:.15em}
+.outfit-placeholder p{font-size:11px;letter-spacing:.28em}
+.outfit-placeholder small{font-size:11px;opacity:.7}
+@media(max-width:650px){.outfit-grid{grid-template-columns:1fr;max-width:510px}.collection{padding-inline:20px}.outfit-image{aspect-ratio:4/5}}
 </style></head><body>
 <header><a class="brand" href="index.html"><small>THE</small>Red <em>Velvet</em></a><nav><a href="index.html">Home</a><a href="index.html#ladies">Our Ladies</a><a href="index.html#experience">The Experience</a><a class="outline" href="index.html#invitation">By Invitation Only</a></nav></header>
 <main><section class="hero"><div class="hero-content"><div class="line"></div><div class="eyebrow">Our Uniform</div><h1>Unmistakably Red Velvet.</h1><p class="lead">Elegant. Sensual. Distinctive.</p><p>Our signature uniform pairs deep burgundy velvet with intricate gold floral embroidery and delicate lace. Designed to embody feminine allure and timeless sophistication, every detail is part of The Red Velvet experience.</p></div></section>
-<section class="gallery-section"><div class="gallery-grid"><div class="gallery-primary"><figure><img class="photo-front" src="asset/hero.webp" alt="Signature burgundy velvet uniform, modeled in the lounge"><figcaption>Signature Look</figcaption></figure><figure><img class="photo-profile" src="asset/hero.webp" alt="Closer composition of the signature burgundy uniform"><figcaption>Silhouette</figcaption></figure></div>
-<div class="gallery-secondary"><div><h2>Details</h2><div class="line"></div><figure class="tile"><div class="crop" role="img" aria-label="Burgundy velvet and gold floral embroidery"></div><figcaption>Floral Embroidery</figcaption></figure><figure class="tile"><div class="crop" role="img" aria-label="Traditional decorative fastening"></div><figcaption>Traditional Fastenings</figcaption></figure><figure class="tile"><div class="crop" role="img" aria-label="Black lace panel details"></div><figcaption>Lace & Velvet</figcaption></figure></div>
-<div><h2>Variations</h2><div class="line"></div><figure class="variation"><img src="asset/uniform.webp" alt="Close-up of the signature qipao uniform"><figcaption>Signature Qipao</figcaption></figure><figure class="variation"><img src="asset/hero.webp" alt="The signature look in the lounge"><figcaption>Evening Styling</figcaption></figure><figure class="variation"><img src="asset/uniform.webp" alt="Gold embroidered velvet fabric closeup"><figcaption>Embroidered Detail</figcaption></figure></div></div>
-<p class="note">Current gallery uses the approved signature-uniform photography. Dedicated front, back and alternative-outfit photographs can replace these images without changing the page layout.</p></div></section></main><footer>THE RED VELVET · A FICTIONAL ROLEPLAY WORLD</footer></body></html>
+<section class="collection" aria-label="Our two uniforms">
+<div class="collection-heading"><div class="line"></div><span class="eyebrow">The Collection</span><h2>Two Signature Looks.</h2></div>
+<div class="outfit-grid">
+<article class="outfit"><div class="outfit-image"><img src="asset/uniform.webp" alt="Burgundy velvet qipao with gold floral embroidery and black lace details" loading="lazy"></div><div class="outfit-label"><span>01</span><h3>The Qipao</h3></div></article>
+<article class="outfit"><div class="outfit-image outfit-placeholder" role="img" aria-label="The Jacket product photograph has not been uploaded yet"><div class="placeholder-mark">THE RED VELVET</div><p>JACKET PHOTOGRAPH</p><small>Awaiting product image</small></div><div class="outfit-label"><span>02</span><h3>The Jacket</h3></div></article>
+</div></section></main><footer>THE RED VELVET · A FICTIONAL ROLEPLAY WORLD</footer></body></html>
