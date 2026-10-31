@@ -48,15 +48,34 @@ main{background:#170609}
  .ladies:before{inset:-35px 0 -25px;background:linear-gradient(180deg,#18070a 0%,rgba(12,3,6,.94) 23%,rgba(12,3,6,.94) 76%,#240a12 100%)}
  .invite-picture{-webkit-mask-image:linear-gradient(180deg,#000 75%,transparent 100%);mask-image:linear-gradient(180deg,#000 75%,transparent 100%)}
 }
+
+/* Continuous cinematic flow: softly layered backgrounds instead of boxed panels. */
+.hero-media:after{background:linear-gradient(0deg,#23070e 0%,rgba(35,7,14,.65) 10%,transparent 36%),linear-gradient(90deg,#1b070b 0%,transparent 10%,transparent 92%,#1b070b 100%)}
+.experience{isolation:isolate;margin-top:-85px;padding-top:145px;padding-bottom:100px;background:#23070e url('asset/experience.webp') center center/cover no-repeat}
+.experience:before{z-index:0;top:0;height:170px;background:linear-gradient(180deg,#23070e 0%,rgba(35,7,14,.54) 48%,transparent 100%)}
+.experience:after{content:"";position:absolute;bottom:-1px;left:0;right:0;height:100px;pointer-events:none;background:linear-gradient(0deg,#170709,transparent)}
+.uniform{overflow:hidden;isolation:isolate;background:radial-gradient(ellipse at 0 40%,#350c19,#170709 72%)}
+.uniform-image:after{background:linear-gradient(90deg,transparent 50%,#170709 100%),linear-gradient(0deg,#170709,transparent 22%),linear-gradient(180deg,#170709,transparent 19%)}
+.uniform-copy{position:relative;z-index:1}
+.ladies{position:relative;isolation:isolate;overflow:hidden;background:#170709 url('asset/experience.webp') center 65%/cover no-repeat}
+.ladies:before{content:"";position:absolute;z-index:-1;inset:0;background:linear-gradient(180deg,#170709 0%,rgba(12,3,7,.92) 23%,rgba(13,3,7,.83) 70%,#1a070b 100%),linear-gradient(90deg,rgba(0,0,0,.42),transparent)}
+.invitation{position:relative;isolation:isolate;background:#1a070b}
+.invitation:before{content:"";position:absolute;z-index:-1;inset:0;background:linear-gradient(180deg,#1a070b,rgba(26,7,11,.35) 38%,#140609),url('asset/experience.webp') center/cover no-repeat;opacity:.55}
+.invite-picture{background:radial-gradient(ellipse at 40% 58%,rgba(111,27,48,.48),rgba(34,9,18,.18) 65%)}
+@media(max-width:650px){
+ .experience{margin-top:-55px;padding-top:105px;padding-bottom:90px}
+ .uniform-image:after{background:linear-gradient(0deg,#170709,transparent 55%),linear-gradient(180deg,#170709,transparent 17%)}
+ .ladies:before{background:linear-gradient(180deg,#170709,rgba(12,3,7,.86) 25%,rgba(12,3,7,.86) 75%,#1a070b)}
+}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 </style></head>
 <body>
 <header><a class="brand" href="#home"><span class="rose">❁</span><span><small>THE</small>Red <em>Velvet</em></span></a><nav class="nav" id="nav"><a href="#home">Home</a><a href="#ladies">Our Ladies</a><a href="#experience">The Experience</a><a href="#uniform">Our Uniform</a><a href="#invitation">Our Story</a><a href="#invitation">The House List</a><a href="#invitation">The Rules</a><a href="#invitation" class="invit">By Invitation Only</a></nav></header>
 <main>
 <section class="hero" id="home"><div class="hero-media" aria-hidden="true"><img src="asset/hero.webp" alt="" fetchpriority="high" decoding="async"></div><div class="hero-copy shell"><div class="eyebrow">By Invitation Only</div><div class="shortline"></div><h1>The <em>Red Velvet</em></h1><div class="tagline">A PRIVATE WORLD AWAITS.</div><p class="intro">Discretion. Indulgence. Exceptional Company.</p><a class="btn" href="#invitation">Request an Invitation <span>→</span></a></div><span class="scrollhint">SCROLL ↓</span></section>
-<section class="experience" id="experience"><div class="inner"><div class="eyebrow">The Experience</div><div class="shortline"></div><p>The Red Velvet offers a refined and intimate experience, where time slows and every detail is curated for your comfort, relaxation and desires.</p><a href="#invitation" class="btn">Discover the Experience <span>→</span></a></div></section><div class="fade-divider"></div>
-<section class="uniform" id="uniform"><div class="uniform-image" role="img" aria-label="Gold-embroidered burgundy velvet qipao uniform"></div><div class="uniform-copy"><div class="eyebrow">Our Uniform</div><div class="shortline"></div><h2>Elegance. Sensual.<br>Unmistakably Red Velvet.</h2><a class="btn" href="#ladies">Our Ladies <span>→</span></a></div></section><div class="fade-divider"></div>
-<section class="ladies" id="ladies"><div><div class="eyebrow">Our Ladies</div><div class="shortline"></div><h2>Extraordinary women.<br>Each with her own allure.</h2><a href="#invitation" class="btn">Meet Our Ladies <span>→</span></a></div><div class="gallery"><div class="person"><img src="asset/hana.png" alt="Hana, featured character"><span>Hana</span></div><div class="person"><img src="asset/mika.png" alt="Mika, featured character"><span>Mika</span></div><div class="person"><img src="asset/reina.png" alt="Reina, featured character"><span>Reina</span></div></div></section><div class="fade-divider"></div>
+<section class="experience" id="experience"><div class="inner"><div class="eyebrow">The Experience</div><div class="shortline"></div><p>The Red Velvet offers a refined and intimate experience, where time slows and every detail is curated for your comfort, relaxation and desires.</p><a href="#invitation" class="btn">Discover the Experience <span>→</span></a></div></section>
+<section class="uniform" id="uniform"><div class="uniform-image" role="img" aria-label="Gold-embroidered burgundy velvet qipao uniform"></div><div class="uniform-copy"><div class="eyebrow">Our Uniform</div><div class="shortline"></div><h2>Elegance. Sensual.<br>Unmistakably Red Velvet.</h2><a class="btn" href="#ladies">Our Ladies <span>→</span></a></div></section>
+<section class="ladies" id="ladies"><div><div class="eyebrow">Our Ladies</div><div class="shortline"></div><h2>Extraordinary women.<br>Each with her own allure.</h2><a href="#invitation" class="btn">Meet Our Ladies <span>→</span></a></div><div class="gallery"><div class="person"><img src="asset/hana.png" alt="Hana, featured character"><span>Hana</span></div><div class="person"><img src="asset/mika.png" alt="Mika, featured character"><span>Mika</span></div><div class="person"><img src="asset/reina.png" alt="Reina, featured character"><span>Reina</span></div></div></section>
 <section class="invitation" id="invitation"><div class="invite-picture"><div class="envelope"><div class="wax">⚜</div></div></div><div class="invite-copy"><div class="eyebrow">By Invitation Only</div><div class="shortline"></div><h2>Begin Your Story.</h2><p>The Red Velvet is a fictional invitation-only house. Discover its atmosphere, characters and stories in this private roleplay world.</p><button class="btn" id="inviteBtn">Request an Invitation <span>→</span></button></div></section></main>
 <footer>THE RED VELVET · AN ADULT FICTIONAL ROLEPLAY WORLD</footer>
 <dialog id="inviteDialog"><h2>By Invitation Only</h2><p>Welcome to The Red Velvet. This is a fictional worldbuilding website. The invitation process is part of the setting; no real-world applications or bookings are accepted.</p><button class="btn close" id="closeDialog">Close</button></dialog>
