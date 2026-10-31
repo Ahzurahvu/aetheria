@@ -47,12 +47,14 @@ figure{margin:0;min-width:0}figure img{width:100%;display:block;object-fit:cover
 .uniform-hero-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center center;z-index:-2}
 .hero:before{z-index:-3}
 @media(max-width:800px){.uniform-hero-photo{object-position:68% center}}
+
+.outfit-image img{object-fit:contain;object-position:center;width:100%;height:100%}.outfit-image{background:#efe3d4}.outfit-waiting{text-align:center}.outfit-image:not(.outfit-placeholder) .outfit-waiting{display:none}
 </style></head><body>
 <header><a class="brand" href="index.html"><small>THE</small>Red <em>Velvet</em></a><nav><a href="index.html">Home</a><a href="index.html#ladies">Our Ladies</a><a href="index.html#experience">The Experience</a><a class="outline" href="index.html#invitation">By Invitation Only</a></nav></header>
 <main><section class="hero"><img class="uniform-hero-photo" src="asset/uniform-hero.webp" alt="" aria-hidden="true" onerror="this.style.display='none'"><div class="hero-content"><div class="line"></div><div class="eyebrow">Our Uniform</div><h1>Unmistakably Red Velvet.</h1><p class="lead">Elegant. Sensual. Distinctive.</p><p>Our signature uniform pairs deep burgundy velvet with intricate gold floral embroidery and delicate lace. Designed to embody feminine allure and timeless sophistication, every detail is part of The Red Velvet experience.</p></div></section>
 <section class="collection" aria-label="Our two uniforms">
 <div class="collection-heading"><div class="line"></div><span class="eyebrow">The Collection</span><h2>Two Signature Looks.</h2></div>
 <div class="outfit-grid">
-<article class="outfit"><div class="outfit-image"><img src="asset/uniform.webp" alt="Burgundy velvet qipao with gold floral embroidery and black lace details" loading="lazy"></div><div class="outfit-label"><span>01</span><h3>The Qipao</h3></div></article>
-<article class="outfit"><div class="outfit-image outfit-placeholder" role="img" aria-label="The Jacket product photograph has not been uploaded yet"><div class="placeholder-mark">THE RED VELVET</div><p>JACKET PHOTOGRAPH</p><small>Awaiting product image</small></div><div class="outfit-label"><span>02</span><h3>The Jacket</h3></div></article>
+<article class="outfit"><div class="outfit-image"><img src="asset/uniform-qipao.webp" alt="The Qipao — burgundy velvet, floral embroidery and black lace stockings" loading="lazy" onerror="this.src='asset/uniform.webp';this.onerror=null"></div><div class="outfit-label"><span>01</span><h3>The Qipao</h3></div></article>
+<article class="outfit"><div class="outfit-image outfit-placeholder"><img src="asset/uniform-jacket.webp" alt="The Jacket — burgundy embroidered cropped jacket, skirt and black lace stockings" loading="lazy" onload="this.parentNode.classList.remove('outfit-placeholder')" onerror="this.style.display='none'"><div class="outfit-waiting"><div class="placeholder-mark">THE RED VELVET</div><p>THE JACKET</p><small>Upload uniform-jacket.webp</small></div></div><div class="outfit-label"><span>02</span><h3>The Jacket</h3></div></article>
 </div></section></main><footer>THE RED VELVET · A FICTIONAL ROLEPLAY WORLD</footer></body></html>
