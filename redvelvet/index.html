@@ -90,6 +90,11 @@ header .nav a.invit{margin-left:auto;padding:11px 14px;border:1px solid var(--go
  header .nav a{font-size:9px;padding:5px 0}
  header .nav a.invit{padding:7px 9px}
 }
+
+/* Tight hero-to-experience transition: eliminate the oversized empty band. */
+.experience{margin-top:-100px;padding-top:96px;padding-bottom:76px;background-position:center 54%}
+.experience:before{top:0;height:90px;background:linear-gradient(180deg,rgba(35,7,14,.75),transparent)}
+@media(max-width:650px){.experience{margin-top:-80px;padding-top:92px;padding-bottom:70px}.experience:before{height:76px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 </style></head>
 <body>
