@@ -67,10 +67,33 @@ main{background:#170609}
  .uniform-image:after{background:linear-gradient(0deg,#170709,transparent 55%),linear-gradient(180deg,#170709,transparent 17%)}
  .ladies:before{background:linear-gradient(180deg,#170709,rgba(12,3,7,.86) 25%,rgba(12,3,7,.86) 75%,#1a070b)}
 }
+
+/* Reference header: discreet single-row navigation above the hero. */
+header{position:absolute;top:0;left:0;right:0;z-index:20;display:grid;grid-template-columns:max-content minmax(0,1fr) max-content;align-items:center;align-content:center;gap:clamp(14px,2vw,38px);height:76px;min-height:0;padding:0 clamp(20px,3.4vw,64px);background:linear-gradient(180deg,rgba(15,3,7,.88),rgba(15,3,7,.22) 85%,transparent);flex-wrap:nowrap}
+header .brand{margin:0;font-size:clamp(24px,2.2vw,34px);flex-shrink:0}
+header .brand .rose{font-size:clamp(24px,2.4vw,34px)}
+header .nav,header .nav.open{position:static;display:flex;flex-basis:auto;grid-column:2 / 4;min-width:0;align-items:center;justify-content:center;flex-wrap:nowrap;gap:clamp(11px,1.35vw,25px);overflow:visible;padding:0;border:0;background:none}
+header .nav a{flex:none;white-space:nowrap;padding:6px 0;font-size:clamp(9px,.72vw,11px);letter-spacing:.11em}
+header .nav a.invit{margin-left:auto;padding:11px 14px;border:1px solid var(--gold);letter-spacing:.14em}
+@media(max-width:1040px){
+ header{height:72px;grid-template-columns:max-content minmax(0,1fr);gap:16px;padding:0 20px}
+ header .nav,header .nav.open{grid-column:2;justify-content:flex-start;gap:16px;overflow-x:auto;overscroll-behavior-x:contain;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+ header .nav::-webkit-scrollbar{display:none}
+ header .nav a{font-size:10px}
+ header .nav a.invit{margin-left:0}
+}
+@media(max-width:650px){
+ header{height:65px;grid-template-columns:max-content minmax(0,1fr);padding:0 12px;gap:12px}
+ header .brand{margin:0;font-size:23px}
+ header .brand .rose{font-size:24px}
+ header .nav,header .nav.open{grid-column:2;flex-basis:auto;gap:14px;padding:0;border:0;justify-content:flex-start}
+ header .nav a{font-size:9px;padding:5px 0}
+ header .nav a.invit{padding:7px 9px}
+}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 </style></head>
 <body>
-<header><a class="brand" href="#home"><span class="rose">❁</span><span><small>THE</small>Red <em>Velvet</em></span></a><nav class="nav" id="nav"><a href="#home">Home</a><a href="#ladies">Our Ladies</a><a href="#experience">The Experience</a><a href="#uniform">Our Uniform</a><a href="#invitation">Our Story</a><a href="#invitation">The House List</a><a href="#invitation">The Rules</a><a href="#invitation" class="invit">By Invitation Only</a></nav></header>
+<header><a class="brand" href="#home"><span class="rose">❁</span><span><small>THE</small>Red <em>Velvet</em></span></a><nav class="nav" id="nav"><a href="#home">Home</a><a href="#ladies">Our Ladies</a><a href="#experience">The Experience</a><a href="#invitation">Our Story</a><a href="#invitation">The House List</a><a href="#invitation">The Rules</a><a href="#invitation" class="invit">By Invitation Only</a></nav></header>
 <main>
 <section class="hero" id="home"><div class="hero-media" aria-hidden="true"><img src="asset/hero.webp" alt="" fetchpriority="high" decoding="async"></div><div class="hero-copy shell"><div class="eyebrow">By Invitation Only</div><div class="shortline"></div><h1>The <em>Red Velvet</em></h1><div class="tagline">A PRIVATE WORLD AWAITS.</div><p class="intro">Discretion. Indulgence. Exceptional Company.</p><a class="btn" href="#invitation">Request an Invitation <span>→</span></a></div><span class="scrollhint">SCROLL ↓</span></section>
 <section class="experience" id="experience"><div class="inner"><div class="eyebrow">The Experience</div><div class="shortline"></div><p>The Red Velvet offers a refined and intimate experience, where time slows and every detail is curated for your comfort, relaxation and desires.</p><a href="#invitation" class="btn">Discover the Experience <span>→</span></a></div></section>
